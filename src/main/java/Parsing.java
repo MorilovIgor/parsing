@@ -10,13 +10,15 @@ import java.util.Iterator;
 
 public class Parsing {
 
-    private static final String FILE_NAME = "C:/Users/User/Desktop/лист (2).xlsx";
-
     public static void main(String[] args) {
 
-        String result = "";
+        final String FILE_NAME = "C:/Users/User/Desktop/лист (2).xlsx";
+
+
 
         try {
+
+            String result = "";
 
             FileInputStream excelFile = new FileInputStream(new File(FILE_NAME));
             Workbook workbook = new XSSFWorkbook(excelFile);
@@ -39,13 +41,7 @@ public class Parsing {
                         result += currentCell.getStringCellValue();
                         //System.out.print(currentCell.getStringCellValue() + "--");
                     }
-                    if (result != null) {
-
-                    }
                 }
-
-
-
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
